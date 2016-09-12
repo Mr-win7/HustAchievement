@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content=""/>
+    <meta name="author" content="Bingyan">
+    <meta name="keywords" content="">
+    <title>发生错误了</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <style type="text/css">
+        body{
+            padding: 0.30rem;
+        }
+        h1{
+            text-align: center;
+            font-size: 0.40rem;
+            margin-bottom: 0.15rem;
+        }
+        #err-message{
+            font-size: 0.16rem;
+        }
+
+    </style>
+    <script type="text/javascript" src="../js/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Error:</h1>
+    <div id="err-message"><p></p></div>
+    <script type="text/javascript">
+        var scale = 1 / window.devicePixelRatio;
+        document.querySelector('meta[name="viewport"]').setAttribute('content','width=device-width,initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.8 + 'px';
+        $('#err-message p').html(localStorage.errMessage);
+    </script>
+</body>
+</html>

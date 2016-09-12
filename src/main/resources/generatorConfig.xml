@@ -1,0 +1,54 @@
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<classPathEntry location="C:\Users\Wenqi\.m2\repository\mysql\mysql-connector-java\5.1.39\mysql-connector-java-5.1.39.jar" ></classPathEntry>
+	<context id="DB2Tables" targetRuntime="Mybatis3" defaultModelType="flat">
+		<property name="beginningDelimiter" value="`" /><property name="endingDelimiter" value="`" />
+		<commentGenerator>
+			<property name="supressDate" value="true" />
+			<property name="supressAllComment" value="true"></property>
+		</commentGenerator>
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/achievement" userId="root"
+			password="380820271@qq.com">
+		</jdbcConnection>
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		<javaModelGenerator
+			targetPackage="com.hust.achievement.domain"
+			targetProject="HustAchievement/src/main/java">
+			<property name="enableSubPackages" value="true" ></property>
+			<property name="trimStrings" value="true" ></property>
+		</javaModelGenerator>
+		<sqlMapGenerator targetPackage="com.hust.achievement.mapper"
+			targetProject="HustAchievement/src/main/resources">
+			<property name="enableSubPackages" value="true"></property>
+		</sqlMapGenerator>
+		<javaClientGenerator targetPackage="com.hust.achievement.mapper"
+			type="XMLMAPPER" targetProject="HustAchievement/src/main/java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		<table tableName="users" delimitAllColumns="true"
+			enableUpdateByExample="false" enableUpdateByPrimaryKey="false"
+			enableDeleteByExample="false" enableDeleteByPrimaryKey="false"
+			domainObjectName="User">
+		</table>
+		<table tableName="users_achievement"
+			enableDeleteByExample="false" enableDeleteByPrimaryKey="false"
+			delimitAllColumns="true" domainObjectName="UserAchievement">
+		</table>
+		<table tableName="days" enableDeleteByExample="false"
+			enableDeleteByPrimaryKey="false" delimitAllColumns="true">
+		</table>
+		<table tableName="achievement" enableDeleteByExample="false"
+			enableDeleteByPrimaryKey="false" enableUpdateByExample="false"
+			enableUpdateByPrimaryKey="false" enableInsert="false"
+			delimitAllColumns="true">
+		</table>
+		<table tableName="category" enableDeleteByExample="false"
+			enableDeleteByPrimaryKey="false" enableInsert="false"
+			enableUpdateByExample="false" enableUpdateByPrimaryKey="false"
+			delimitAllColumns="true">
+		</table>
+	</context>
+</generatorConfiguration>

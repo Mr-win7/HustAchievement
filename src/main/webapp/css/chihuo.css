@@ -1,0 +1,119 @@
+header{
+	height: 1.77rem;
+	width: 100%;
+	background: url('../images/chihuo-bg.jpg') no-repeat center / cover;
+	z-index: 0;
+}
+
+.container {
+	height: auto;
+	min-height: calc(100% - 1.77rem);
+	padding-bottom: 2.20rem;
+	background: url('../images/chihuo-bg-cook.png') no-repeat bottom / 100% auto;
+}
+
+.campus .btn{
+	font-size: 0.16rem;
+	line-height: 0.26rem;
+	width: 0.9rem;
+	margin: 0.1rem auto;
+	padding-left: 0.16rem;
+	border-radius: 0.13rem;
+	border: 1px solid rgb(40, 192, 115);
+	color: rgb(40, 192, 115);
+	transition: all 0.6s ease;
+	background: transparent url('../images/icons.png') no-repeat 98.5% 31.5% / 764%; 
+}
+
+.campus .btn-active{
+	color: #fff;
+	background: rgb(40, 192, 115) url('../images/icons.png') no-repeat 98.5% 29% / 764%;
+}
+
+.dining{
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	transition: all 0.6s ease;
+}
+
+.dining-notactive{
+	height: 0 !important;
+	padding: 0;
+}
+
+.dining-active{
+	height: auto;
+	padding: 0.36rem;
+}
+
+.s-place{
+	height: 0;
+	width: 0;
+	margin: 0.10rem 0.15rem;
+	float: left;
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-size: 556%;
+}
+
+.s-place-active{
+	background-image: url('../images/luchi-active.png');
+}
+
+.s-place-notactive{
+	background-image: url('../images/luchi-notactive.png');
+}
+
+.dining-active .s-place{
+	height: 0.90rem;
+	width: 0.72rem;
+}
+
+.s-place-notactive{
+	background-image: url('../images/chihuo-notactive.png') !important;
+}
+
+#detail-wrapper{
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: url('../images/dining-detail.png') no-repeat center / cover;
+	z-index: 1000;
+	padding: 1.00rem 0.35rem 1.35rem;
+}
+
+.detail{
+	height: 100%;
+	width: 100%;
+	padding: 0.27rem;
+	position: relative;
+	font-size: 0.14rem;
+}
+
+.detail h1{
+	text-align: center;
+	margin-bottom: 0.20rem;
+	font-size: 0.26rem;
+	color: rgb(40, 192, 115);
+}
+
+.detail li{
+	width: 100%;
+	line-height: 0.22rem;
+	margin-bottom: 0.20rem;
+}
+.detail span {
+	color: rgb(40, 192, 115);
+}
+
+#detail-wrapper .btn{
+	height: 0.60rem;
+	width: 1.60rem;
+	position: absolute;
+	left: calc(50% - 0.80rem);
+	bottom: -0.30rem;
+	background: url('../images/icons.png') no-repeat no-repeat 67.8% 54% / 311%;
+}

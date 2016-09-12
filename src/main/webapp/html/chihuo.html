@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content=""/>
+    <meta name="author" content="Bingyan">
+    <meta name="keywords" content="">
+    <title>吃货比拼</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/chihuo.css">
+    <script type="text/javascript" src="../js/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/err.js"></script>
+    <script type="text/javascript" src="../js/position.js"></script>
+    <script type="text/javascript" src="../js/chihuo.js"></script>
+</head>
+<body>
+    <header></header>
+    <div class="container">
+        <div class="campus" id="westCampus">
+            <a class="btn" index="0" onclick="show(this);" id="init">西校区</a>
+            <div class="dining dining-notactive">
+                <div class="s-place s-place-notactive" style="background-position: 2.7% 2.5%;" onclick="showDetail('百惠园')" id="百惠园"></div>
+                <div class="s-place s-place-notactive" style="background-position: 27% 2.5%;" onclick="showDetail('西一食堂')" id="西一食堂"></div>
+                <div class="s-place s-place-notactive" style="background-position: 50% 2.5%;" onclick="showDetail('西二食堂')" id="西二食堂"></div>
+                <div class="s-place s-place-notactive" style="background-position: 2.5% 34%;" onclick="showDetail('百品屋')" id="百品屋"></div>
+                <div class="s-place s-place-notactive" style="background-position: 74% 2.5%;" onclick="showDetail('枫林湾')" id="枫林湾"></div>
+                <div class="s-place s-place-notactive" style="background-position: 98% 2.5%;" onclick="showDetail('百景园')" id="百景园"></div>
+            </div>
+        </div>
+        <div class="campus" id="midCampus">
+            <a class="btn" index="1" onclick="show(this);">中校区</a>
+            <div class="dining dining-notactive">
+                <div class="s-place s-place-notactive" style="background-position: 27.3% 34%;" onclick="showDetail('喻园餐厅')" id="喻园餐厅"></div>
+                <div class="s-place s-place-notactive" style="background-position: 50% 34%;" onclick="showDetail('集锦园')" id="集锦园"></div>
+                <div class="s-place s-place-notactive" style="background-position: 74% 34%;" onclick="showDetail('CBD')" id="CBD"></div>
+                <div class="s-place s-place-notactive" style="background-position: 27.5% 67.7%;" onclick="showDetail('集贤楼')" id="集贤楼"></div>
+                <div class="s-place s-place-notactive" style="background-position: 2.5% 67.7%;" onclick="showDetail('紫荆园')" id="紫荆园"></div>
+                <div class="s-place s-place-notactive" style="background-position: 98% 35%;" onclick="showDetail('东一食堂')" id="东一食堂"></div>
+                <div class="s-place s-place-notactive" style="background-position: 98% 100%;" onclick="showDetail('东三食堂')" id="东三食堂"></div>
+                <div class="s-place s-place-notactive" style="background-position: 50% 67.8%;" onclick="showDetail('清真食堂')" id="清真食堂"></div>
+            </div>
+        </div>
+        <div class="campus" id="eastCampus">
+            <a class="btn" index="2" onclick="show(this);">东校区</a>
+            <div class="dining dining-notactive">
+                <div class="s-place s-place-notactive" style="background-position: 74% 67.8%;" onclick="showDetail('韵苑食堂')" id="韵苑食堂"></div>
+                <div class="s-place s-place-notactive" style="background-position: 74% 100%;" onclick="showDetail('学一食堂')" id="学一食堂"></div>
+                <div class="s-place s-place-notactive" style="background-position: 50% 100%;" onclick="showDetail('学二食堂')" id="学二食堂"></div>
+                <div class="s-place s-place-notactive" style="background-position: 27.5% 100%;" onclick="showDetail('百盛园')" id="百盛园"></div>
+                <div class="s-place s-place-notactive" style="background-position: 2.5% 100%;" onclick="showDetail('东园食堂')" id="东园食堂"></div>
+                <div class="s-place s-place-notactive" style="background-position: 98% 67.8%;" onclick="showDetail('东篱餐厅')" id="东篱餐厅"></div>
+            </div>
+        </div>
+    </div>
+    <!-- <div id="detail-wrapper">
+        <div class="detail">
+            <div class="caption">
+                <h1>BBB</h1>
+                <ul>
+                    <li class='desc'><p><span>[介绍]&nbsp;&nbsp;</span></p></li>
+                    <li class='adsress'><p><span>[地址]&nbsp;&nbsp;</span></p></li>
+                    <li class='special'><p><span>[特色推荐]&nbsp;&nbsp;</span></p></li>
+                </ul>
+            </div>
+            <a class="btn" onclick=""></a>
+        </div>
+    </div> -->
+    <script type="text/javascript" src="../js/dining-data.js"></script>
+    <script type="text/javascript">
+        var scale = 1 / window.devicePixelRatio;
+        document.querySelector('meta[name="viewport"]').setAttribute('content','width=device-width,initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.8 + 'px';
+        $('#init').click();
+    </script>
+</body>
+</html>

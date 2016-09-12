@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content=""/>
+    <meta name="author" content="Bingyan">
+    <meta name="keywords" content="">
+    <title>登陆</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <script type="text/javascript" src="../js/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../js/err.js"></script>
+    <script type="text/javascript" src="../js/login.js"></script>
+    <script type="text/javascript" src="../js/base64.js"></script>
+</head>
+<body>
+    <div class="container">
+        <form name="login" method="POST" action="/user/user/login">
+            <input type="text" name="studentNumber" placeholder="请输入hub系统账号">
+            <input id="pwd" name="pwd" type="password" placeholder="请输入hub系统密码">
+            <!-- <input type="hidden" name="password"> -->
+            <a class="btn btn-login" id="loginBtn" onclick="loginCheck();"><span class="btn"></span></a>
+            <div id='baidu_geo'>
+        </form>
+    </div>
+    <script type="text/javascript">
+        var scale = 1 / window.devicePixelRatio;
+        document.querySelector('meta[name="viewport"]').setAttribute('content','width=device-width,initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.9 + 'px';
+    </script>
+</body>
+</html>

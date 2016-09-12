@@ -1,0 +1,140 @@
+body{
+	background: url('../images/xueba-bg.jpg') no-repeat center / cover;
+}
+
+.container{
+	width: 100%;
+	height: auto;
+	padding: 1.7rem 0.3rem 0;
+}
+
+.container ul{
+	width: 100%;
+}
+
+.container li{
+	width: 1.55rem;
+	height: 1.65rem;
+	display: block;
+	float: left;
+}
+
+.container li a{
+	width: 100%;
+	height: 100%;
+}
+
+.s-place,
+.place {
+	background-repeat: no-repeat;
+	background-size: 230.65%;
+}
+
+.s-place-active,
+.place-active {
+	background-image: url('../images/xueba-active.png');
+}
+
+.s-place-notactive,
+.place-notactive {
+	background-image: url('../images/xueba-notactive.png');
+}
+
+#punch-wrapper{
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: url('../images/punch.png') no-repeat center / cover;
+	z-index: 1000;
+}
+
+.punch{
+	height: 3rem;
+	width: 1.9rem;
+	position: absolute;
+	left: calc(50% - 0.95rem);
+	top: calc(50% - 1.5rem);
+}
+
+#punch form{
+	margin-top: -0.15rem;
+}
+
+#punch form .title{
+	height: 1.60rem;
+	width: 1.60rem;
+	margin: 0 auto;
+	background: url('../images/icons.png') no-repeat 4% 67% / 315.46%;
+}
+
+#punch form label{
+	display: block;
+	height: 0.4rem;
+	width: 100%;
+	font-size: 0.16rem;
+	line-height: 0.40rem;
+}
+
+#punch form label * {
+	float: left;
+}
+
+#punch form input{
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid #333;
+	line-height: 0.3rem;
+	margin-left: 0.06rem;
+	font-size: 0.16rem;
+	width: 1.5rem;
+	text-align: center;
+	color: #333;
+}
+
+#punch-btn{
+	clear: both;
+	height: 0.48rem;
+	width: 1.60rem;
+	margin: 0 auto;
+	background: url('../images/icons.png') no-repeat 67% 35% / 315.46%;
+}
+
+
+#punch-success .title{
+	width: 1.70rem;
+	height: 0.4rem;
+	margin: 0 auto;
+	background: url('../images/icons.png') no-repeat 4% 35% / 315.46%;
+}
+
+#punch-success p{
+	width: 100%;
+	word-break: break-all;
+	color: rgb(81, 104, 48);
+	font-size: 0.20rem;
+	margin-top: 0.30rem;
+	line-height: 0.30rem;
+	padding-left: 0.05rem;
+}
+
+#punch-success .btn{
+	position: absolute;
+	bottom: 0.25rem;
+	font-size: 0.18rem;
+	width: 0.85rem;
+	line-height: 0.4rem;
+	text-align: center;
+	color: #fff;
+	border-radius: 0.2rem;
+	background-color: rgb(94, 165, 47);
+}
+
+#quit{
+	left: 0.08rem;
+}
+
+#share{
+	left: calc(50% + 0.08rem);
+}

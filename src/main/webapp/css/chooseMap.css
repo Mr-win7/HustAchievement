@@ -1,0 +1,233 @@
+html{
+	overflow: hidden;
+}
+.title{
+	height: 0.40rem;
+	width: 2.2rem;
+	margin: 0.24rem auto;
+	background: url('../images/icons.png') no-repeat 69% 5% / 230.1053%;
+}
+.slider{
+	width: 100%;
+	height: 2.80rem;
+	position: relative;
+	margin-bottom: 0.30rem;
+	overflow: hidden;
+}
+.slide{
+	width: 2.75rem;
+	height: 2.40rem;
+	position: absolute;
+	left: 0.575rem;
+	top: 0;
+	border-radius: 0.17rem;
+	z-index: 1;
+	transform: translateX(0rem) scale(0.7);
+	box-shadow: 0 0 0.3rem rgba(130,130,130,0.5);
+	transform-style: preserve-3d;
+}
+.slide a{
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+.slide img{
+	height: 100%;
+	width: 100%;
+}
+.slide-cur{
+	z-index: 10;
+	top: 0;
+	transform: translateX(0rem) scale(1.0);
+}
+.slide-left{
+	transform: translateX(-1.50rem) scale(0.7);
+}
+.slide-right{
+	transform: translateX(1.50rem) scale(0.7);
+}
+.ctrl{
+	width: 0.8rem;
+	height: 0.0.8rem;
+	margin: 0.30rem auto 0;
+	position: absolute;
+	z-index: 20;
+	bottom: 0;
+	left: 1.55rem;
+}
+.ctrl a{
+	display: block;
+	height: 0.08rem;
+	width: 0.08rem;
+	border-radius: 50%;
+	background: rgb(210, 210, 210);
+	margin: 0 0.06rem;
+	float: left;
+}
+.ctrl .active{
+	background: rgb(85, 85, 102);
+}
+#progress,#difficulty{
+	width: 2.60rem;
+	font-size: 0.16rem;
+	margin: 0.10rem auto;
+	color: rgb(95, 98, 102);
+}
+#progress *,
+#difficulty *{
+	float: left;
+}
+#progress .text,
+#difficulty .text{
+	margin-right: 0.18rem;
+}
+#progress{
+	height: 0.16rem;
+	line-height: 0.16rem;
+}
+.fill{
+	width: 1.40rem;
+	height: 0.12rem;
+	background: rgb(210, 210, 210);
+	border-radius: 0.06rem;
+	margin: 0.02rem 0.05rem;
+	overflow: hidden;
+}
+.fill div{
+	height: 100%;
+	background: rgb(255, 174,0);
+	border-radius: 0.06rem;
+}
+#difficulty{
+	height: 0.30rem;
+	line-height: 0.30rem;
+}
+.point{
+	height: 0.30rem;
+	width: 0.32rem;
+	background: url('../images/icons.png') no-repeat 46.5% 22% / 1884.25303%;
+}
+#startBtn{
+	width: 2.00rem;
+	height: 0.50rem;
+	margin: 0.16rem auto;
+	background: url('../images/icons.png') no-repeat 2% 20% / 263.777673%;
+}
+/* leaderboard */
+.leaderboard{
+	height: 100%;
+	width: 100%;
+	padding-top: 0.26rem;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background-color: #fff;
+	z-index: 100;
+	transition: all 0.6s ease;
+}
+.leaderboard-on{
+	top: 0;
+}
+#paihang{
+	position: absolute;
+	top: -0.70rem;
+	left: 1.55rem;	
+	width: 0.80rem;
+	height: 0.60rem;
+	background: url('../images/icons.png') no-repeat 97.5% 4% / 723.56%;
+}
+#back{
+	position: absolute;
+	height: 0.22rem;
+	width: 0.32rem;
+	top: 0.12rem;
+	left: calc(50% - 0.16rem);
+	background: url('../images/icons.png') no-repeat 94% 10% / 1600%;
+}
+.logo{
+	height: 1.10rem;
+	width: 2.90rem;
+	margin: 0.15rem auto;
+	background: url('../images/icons.png') no-repeat 89% 78% / 175%;
+}
+.daren{
+	height: 2.20rem;
+}
+.jindu{
+	width: 2.75rem;
+	height: 3.00rem;
+	margin: 0 auto;
+	position: relative;
+}
+h1.title{
+	color: rgb(255, 150, 0);
+	text-align: center;
+	font-size: 0.22rem;
+	line-height: 0.42rem;
+	margin: 0 auto;
+	background: #fff;
+}
+.daren .user{
+	width: 100%;
+	height: 0.20rem;
+	margin: 0.20rem 0;
+	font-size: 0.14rem;
+	padding-left: 1.65rem;
+	position: relative;
+	line-height: 0.22rem;
+}
+.daren .user span{
+	display: block;
+	width: 0.55rem;
+	border-radius: 0.10rem;
+	color: #fff;
+	text-align: center;
+	background-color: rgb(255, 150, 0);
+	position: absolute;
+	top: 0;
+	left: 0.85rem;
+}
+.jindutiao-group{
+	position: relative;
+	height: calc(100% - 0.42rem);
+	width: 100%;
+}
+.jindutiao{
+	width: 0.55rem;
+	height: 100%;
+	padding: 0.25rem 0.135rem;
+	position: absolute;
+	bottom: 0;
+}
+
+.name,
+.jindu .percent{
+	display: block;
+	width: 100%;
+	line-height: 0.25rem;
+	position: absolute;
+	left: 0;
+	font-size: 0.12rem;
+	text-align: center;
+}
+.name{
+	top: 0;
+}
+.jindutiao .fill{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	border-radius: 0;
+	position: relative;
+	background: #fff;
+}
+.jindutiao .fill div{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	border-radius: 14rem 14rem 0 0;
+	background-color: rgb(255, 150, 0);
+}
+.jindu .percent{
+	bottom: 0;
+}
