@@ -3,6 +3,8 @@ package com.hust.achievement.web;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -19,10 +21,10 @@ public class BaseController
 	 */
 	@ResponseBody
 	@ExceptionHandler
-	public Map<String,String> exp(Exception exception)
+	public ResponseEntity<Object> exp(Exception exception)
 	{
-		Map<String,String> map = new HashMap<>();
+		Map<String, String> map = new HashMap<>();
 		map.put("Error", exception.getMessage());
-		return map;
+		return new ResponseEntity<Object>(map, HttpStatus.FORBIDDEN);
 	}
 }
