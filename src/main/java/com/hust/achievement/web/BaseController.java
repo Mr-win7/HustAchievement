@@ -24,7 +24,7 @@ public class BaseController
 	public ResponseEntity<Object> exp(Exception exception)
 	{
 		Map<String, String> map = new HashMap<>();
-		map.put("Error", exception.getMessage());
+		map.put("message", exception.getMessage());
 		return new ResponseEntity<Object>(map, HttpStatus.FORBIDDEN);
 	}
 }
