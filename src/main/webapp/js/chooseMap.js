@@ -1,17 +1,26 @@
-var data = [
-        {name: 'luchi', difficulty: 3},
-        {name: 'chihuo', difficulty: 4},
-        {name: 'xueba', difficulty: 5},
-        {name: 'shenghuo', difficulty: 5}
-    ];
+var data = [{
+    name: 'luchi',
+    difficulty: 3
+}, {
+    name: 'chihuo',
+    difficulty: 4
+}, {
+    name: 'xueba',
+    difficulty: 5
+}, {
+    name: 'shenghuo',
+    difficulty: 5
+}];
+
 function slide(index) {
-    
+
     var difficulty = document.getElementById('difficulty');
 
     var slide = document.getElementsByClassName('slide');
     var ctrl = document.getElementsByClassName('ctrl')[0].getElementsByTagName('a');
-    var next = index + 1, prev = index - 1;
-    if(next >= slide.length){
+    var next = index + 1,
+        prev = index - 1;
+    if (next >= slide.length) {
         next = 0;
     } else if (prev < 0) {
         prev = slide.length - 1;
@@ -25,33 +34,35 @@ function slide(index) {
         slide[i].style.transition = 'all 0.6s ease';
         ctrl[i].classList.remove('active');
     }
-    for(var i = 0;i < data[index].difficulty;i++){
+    for (var i = 0; i < data[index].difficulty; i++) {
         var point = document.createElement('div');
         point.className = 'point';
         difficulty.appendChild(point);
     }
-    
+
     slide[next].classList.add('slide-right');
     slide[index].classList.add('slide-cur');
     slide[prev].classList.add('slide-left');
     ctrl[index].classList.add('active');
+
+    beginBtn.href = slide[index].getAttribute('data-href');
 }
 
-$(function(){
+$(function() {
     var leaderboard = $('.leaderboard');
     var paihang = $('#paihang');
     var back = $('#back');
-    paihang.click(function(){
+    paihang.click(function() {
         leaderboard.addClass('leaderboard-on');
     });
-    back.click(function(){
+    back.click(function() {
         leaderboard.removeClass('leaderboard-on');
     });
 
     $.ajax({
         type: 'GET',
         url: '/achievement/achievement/achievement/top'
-    }).done(function(res){
+    }).done(function(res) {
         var navigator = res.路痴拯救[0] ? res.路痴拯救[0].studentNumber + '  ' + res.路痴拯救[0].name : 'No one';
         var gourmet = res.吃货比拼[0] ? res.吃货比拼[0].studentNumber + '  ' + res.吃货比拼[0].name : 'No one';
         var scholar = res.学霸来了[0] ? res.学霸来了[0].studentNumber + '  ' + res.学霸来了[0].name : 'No one';
@@ -60,7 +71,7 @@ $(function(){
         $('#gourmet').html(gourmet);
         $('#scholar').html(scholar);
         $('#traveller').html(traveller);
-        for(var i = 0; i < res.Top5.length; i++){
+        for (var i = 0; i < res.Top5.length; i++) {
             $('#topuser-' + i + ' .name').html(res.Top5[i].name);
             completion('#topuser-' + i, res.Top5[i].percentage, 'height');
         }
@@ -69,12 +80,12 @@ $(function(){
     $.ajax({
         type: 'POST',
         url: '/achievement/user/user/schedule'
-    }).done(function(res){
-       completion('#progress',( res.length / 50) * 100, 'width') 
+    }).done(function(res) {
+        completion('#progress', (res.length / 50) * 100, 'width')
     }).fail(errHandler);
 });
 
-function completion(selector, num, dir){
+function completion(selector, num, dir) {
     $(selector + ' .fill div').css(dir, num + '%');
     $(selector + ' .percent').html(num + '%');
 }
