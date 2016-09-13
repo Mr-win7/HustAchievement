@@ -147,7 +147,7 @@ public class UserService
 		// get the name of user
 		response = httpClient.execute(httpGet2).getEntity().getContent();
 		content = IOUtils.toString(response, "UTF-8");
-		pattern = Pattern.compile("<div class=\"name3\">æ¬¢è¿Ž! (.*?)</div>");
+		pattern = Pattern.compile("<div class=\"name3\">»¶Ó­! (.*?)</div>");
 		matcher = pattern.matcher(content);
 		match = null;
 		while (matcher.find())
