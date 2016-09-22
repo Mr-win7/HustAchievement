@@ -147,7 +147,7 @@ public class UserService
 		// get the name of user
 		response = httpClient.execute(httpGet2).getEntity().getContent();
 		content = IOUtils.toString(response, "UTF-8");
-		pattern = Pattern.compile("<div class=\"name3\">欢迎！ (.*?)</div>");
+		pattern = Pattern.compile("<div class=\"name3\">欢迎! (.*?)</div>");
 		matcher = pattern.matcher(content);
 		match = null;
 		while (matcher.find())
@@ -184,8 +184,7 @@ public class UserService
 		{
 			daysMapper.sign(user.getStudentNumber());
 			return daysMapper.selectByPrimaryKey(user.getStudentNumber()).getDays();
-		}
-		else
+		} else
 		{
 			throw new Exception("User has finished the task");
 		}
@@ -218,8 +217,7 @@ public class UserService
 		if (achievementMapper.selectByPrimaryKey(achievementName) == null)
 		{
 			throw new Exception("No such achievement!");
-		}
-		else
+		} else
 		{
 			UserAchievement userAchievement = new UserAchievement();
 			userAchievement.setAchievementName(achievementName);
