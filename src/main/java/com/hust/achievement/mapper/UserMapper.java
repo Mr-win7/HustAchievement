@@ -57,4 +57,13 @@ public interface UserMapper
 	 * @return list of top users.
 	 */
 	List<User> selectTopUsers(@Param("category") String category);
+
+	/**
+	 * This method is used for mark the users who have finished all the
+	 * achievements.
+	 * 
+	 * @param category
+	 * @return bit of success
+	 */
+	int updateFullUsers(@Param("category") String category);
 }

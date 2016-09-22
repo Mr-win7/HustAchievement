@@ -38,8 +38,10 @@ public class AchievementService
 		for (String category : names)
 		{
 			concurrentHashMap.put(category, userMapper.selectTopUsers(category));
+			userMapper.updateFullUsers(category);
 		}
 		concurrentHashMap.put("Top5", userMapper.selectTopUsers(null));
+		userMapper.updateFullUsers(null);
 
 		// set the attribute
 		webApplicationContext.getServletContext().setAttribute("chart", concurrentHashMap);
@@ -62,8 +64,7 @@ public class AchievementService
 		if (chart instanceof ConcurrentHashMap<?, ?>)
 		{
 			concurrentHashMap = (ConcurrentHashMap<String, List<User>>) chart;
-		}
-		else
+		} else
 		{
 			throw new Exception("fail to get chart!");
 		}

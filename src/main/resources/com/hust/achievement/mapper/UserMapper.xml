@@ -128,13 +128,24 @@
   </select>
   <select id="selectTopUsers" parameterType="java.lang.String"
   	resultMap="BaseResultMap">
-  	SELECT * FROM users WHERE student_number IN (SELECT * FROM (SELECT student_number FROM users_achievement WHERE status = "done" AND achievement_name IN (SELECT name FROM achievement
+  	SELECT * FROM users WHERE student_number IN (SELECT * FROM (SELECT
+  	student_number FROM users_achievement WHERE status = "done" AND
+  	achievement_name IN (SELECT name FROM achievement
   	<where>
-  		<if test="category != null">category = #{category}</if>
-  	</where>
-	) GROUP BY student_number ORDER BY COUNT(achievement_name) LIMIT 3) AS chart)
-  	<trim>
-  		<if test="category == null">LIMIT 1</if>
-  	</trim>
-  </select>
+  		<if test="category != null">category = #{category}</if></where>
+  	) GROUP BY student_number ORDER BY COUNT(achievement_name),
+  	MAX(finish_time)) AS chart)
+  	<if test="category != null">AND ${category} = "undone"</if>
+  	AND all_finish = "undone"
+  	<if test="category != null">LIMIT 1</if>
+  	<if test="category == null">LIMIT 5</if></select>
+  <update id="updateFullUsers" parameterType="java.lang.String">UPDATE users SET <if test="category != null">${category} = "done"</if>
+ <if test="category == null">all_finish = "done"</if>
+ WHERE (SELECT COUNT(*) FROM users_achievement WHERE status = "done" AND
+ achievement_name IN (SELECT name FROM achievement
+ <where>
+ 	<if test="category != null">category = #{category}</if></where>
+ )) = (SELECT COUNT(*) FROM achievement
+ <where>
+ 	<if test="category != null">category = #{category}</if></where>)</update>
 </mapper>

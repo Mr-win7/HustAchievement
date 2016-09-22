@@ -32,10 +32,14 @@
 			enableUpdateByExample="false" enableUpdateByPrimaryKey="false"
 			enableDeleteByExample="false" enableDeleteByPrimaryKey="false"
 			domainObjectName="User">
+			<ignoreColumn column="路痴拯救" /><ignoreColumn column="吃货比拼" ></ignoreColumn><ignoreColumn
+				column="学霸来了" /><ignoreColumn column="流浪生活" /><ignoreColumn
+				column="all_finish" />
 		</table>
 		<table tableName="users_achievement"
 			enableDeleteByExample="false" enableDeleteByPrimaryKey="false"
 			delimitAllColumns="true" domainObjectName="UserAchievement">
+			<ignoreColumn column="finish_time" ></ignoreColumn>
 		</table>
 		<table tableName="days" enableDeleteByExample="false"
 			enableDeleteByPrimaryKey="false" delimitAllColumns="true">
